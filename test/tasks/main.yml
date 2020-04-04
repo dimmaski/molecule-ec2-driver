@@ -1,0 +1,6 @@
+---
+# tasks file for test
+- name: Create directory {{ dir }}
+  file:
+    path: "{{ dir }}"
+    state: directory

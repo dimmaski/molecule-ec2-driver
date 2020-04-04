@@ -1,0 +1,14 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Register test variable
+    stat:
+      path: "/tmp/test"
+    register: test_dir
+
+  - name: Check if directory exists
+    assert:
+      that: test_dir.stat.exists and test_dir.stat.isdir
